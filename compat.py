@@ -151,8 +151,6 @@ def _build_fallback_module():
     class CTkButton(_StyleMixin, tkinter.Button):
         def __init__(self, master=None, **kwargs):
             options = self._tk_options(**kwargs)
-            if options.pop("state", "normal") == "disabled":
-                options["state"] = "disabled"
             options.setdefault("state", "normal")
             options.setdefault("relief", "raised")
             super().__init__(master, **options)
